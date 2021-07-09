@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity implements ItemClickListner 
 
     private void setRecyclerView() {
         BirdAdapter birdAdapter = new BirdAdapter(birdList, this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        StaggeredGridLayoutManager linearLayoutManager = new StaggeredGridLayoutManager(4,
+                StaggeredGridLayoutManager.HORIZONTAL);
         recyclerView.setAdapter(birdAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
 
